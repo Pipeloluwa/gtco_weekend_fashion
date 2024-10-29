@@ -7,16 +7,66 @@ import ImageListComponent from '@/app/components/client-components/about-compone
 import WinnersComponent from '@/app/components/client-components/polls-component/WinnersComponent';
 import { IPollsDataBase, IwinnersDataBase } from '@/app/interfaces/client-interfaces/PollsInterfaces';
 import PollsCategoryComponent from '@/app/components/client-components/polls-component/PollsCategoryComponent';
+// import axios from 'axios';
+// // import { apiRoot } from '@/app/sharedVariables';
+// import LoaderComponent from '@/app/components/shared-components/LoaderComponent';
 
 const PageIndex = () => {
-    const parentDivRef :React.MutableRefObject<HTMLDivElement | null>= useRef(null);
-    const dispatch= useDispatch();
-    const [voteClothes, setVoteClothes]= useState<string>("");
-    const [voteShoes, setVoteShoes]= useState<string>("");
-    const [voteAccessories, setVoteAccessories]= useState<string>("");
+    const dispatch = useDispatch();
+    const [voteClothes, setVoteClothes] = useState<string>("");
+    const [voteShoes, setVoteShoes] = useState<string>("");
+    const [voteAccessories, setVoteAccessories] = useState<string>("");
+
+    // const [showProcessed, setshowProcessed]= useState(false);
+    // const [showProcessing, setshowProcessing]= useState(false);
+
+    // const voteClothesFunction= ()=> {
+    //     const jsonData= {
+    //         "ip": "string",
+    //         "designerId": "string",
+    //         "category": "string"
+    //       };
+
+    //     axios.request(
+    //         {
+    //             method: 'post',
+    //             data: jsonData,
+    //             maxBodyLength: Infinity,
+    //             url: apiRoot + 'user-vote/create',
+    //             headers: { 
+    //               'Content-Type': 'application/json',
+    //             }
+    //         }
+    //     )
+    //     .then((response) => {
+    //         setshowProcessing(false);
+    //         setshowProcessed(true);
+    //     })
+    //     .catch((error) => {
+    //         setshowProcessing(false);
+    //     });
+    // }
 
 
-    const winnersData: IwinnersDataBase[]= [
+    // useEffect(() => {
+    //     axios.get(apiRoot + 'designer/get-all', {
+    //         headers: {
+    //             'Content-Type': 'application/json', // Add other headers if needed
+    //           },
+    //     }).then(res => {
+    //         // setWinnersData(
+    //         //     [
+    //         //         ...res.data
+    //         //     ]
+    //         // ); 
+
+    //         console.log(res);
+    //     })
+    //     .catch(e => {});
+    // });
+
+
+    const [winnersData, setWinnersData] = useState<IwinnersDataBase[]>([
         {
             id: "sfsdfsdfsdvvwe",
             title: "Clothes Designer",
@@ -43,11 +93,11 @@ const PageIndex = () => {
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/4.webp'
         },
-    ];
+    ]);
 
 
-    
-    const userVoteClothData: IPollsDataBase[]= [
+
+    const userVoteClothData: IPollsDataBase[] = [
         {
             id: "sfsdfsdfsdvvwe",
             userName: "Ajanlekoko Sangbafo",
@@ -56,14 +106,14 @@ const PageIndex = () => {
         },
 
         {
-            id:"wyeuioyweufwhkfwifb",
+            id: "wyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/3.webp'
         },
 
         {
-            id:"fhwifhweoifhwee",
+            id: "fhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
@@ -77,21 +127,21 @@ const PageIndex = () => {
         },
 
         {
-            id:"afhyohcwyeuioyweufwhkfwifb",
+            id: "afhyohcwyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/2.webp'
         },
 
         {
-            id:"akfojisdffhwifhweoifhwee",
+            id: "akfojisdffhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
         },
     ];
 
-    const userVoteShoeData: IPollsDataBase[]= [
+    const userVoteShoeData: IPollsDataBase[] = [
         {
             id: "sfsdfsdfsdvvwe",
             userName: "Ajanlekoko Sangbafo",
@@ -100,14 +150,14 @@ const PageIndex = () => {
         },
 
         {
-            id:"wyeuioyweufwhkfwifb",
+            id: "wyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/3.webp'
         },
 
         {
-            id:"fhwifhweoifhwee",
+            id: "fhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
@@ -121,21 +171,21 @@ const PageIndex = () => {
         },
 
         {
-            id:"afhyohcwyeuioyweufwhkfwifb",
+            id: "afhyohcwyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/2.webp'
         },
 
         {
-            id:"akfojisdffhwifhweoifhwee",
+            id: "akfojisdffhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
         },
     ];
 
-    const userVoteAccessoryData: IPollsDataBase[]= [
+    const userVoteAccessoryData: IPollsDataBase[] = [
         {
             id: "sfsdfsdfsdvvwe",
             userName: "Ajanlekoko Sangbafo",
@@ -144,14 +194,14 @@ const PageIndex = () => {
         },
 
         {
-            id:"wyeuioyweufwhkfwifb",
+            id: "wyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/3.webp'
         },
 
         {
-            id:"fhwifhweoifhwee",
+            id: "fhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
@@ -165,14 +215,14 @@ const PageIndex = () => {
         },
 
         {
-            id:"afhyohcwyeuioyweufwhkfwifb",
+            id: "afhyohcwyeuioyweufwhkfwifb",
             userName: "Aminoberen Jinodu",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/2.webp'
         },
 
         {
-            id:"akfojisdffhwifhweoifhwee",
+            id: "akfojisdffhwifhweoifhwee",
             userName: "Daudu Dauda",
             userDescription: "Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium Lorem ipsium",
             userImage: '/images/pictures/1.webp'
@@ -180,39 +230,46 @@ const PageIndex = () => {
     ];
 
     useEffect(() => {
-        dispatch(setNavValue({action: "Polls"}));
-      });
+        dispatch(setNavValue({ action: "Polls" }));
+    });
 
 
 
-      const images= [
+    const images = [
         '/images/pictures/1.webp',
         '/images/pictures/2.webp',
         '/images/pictures/3.webp'
-      ]
-    
-      const content= `Have Your Say! Participate in our Online Polls and let your voice be heard. Cast your vote, see instant results, and be part of shaping decisions that matter. Your opinion counts!`
-    
+    ]
+
+    const content = `Have Your Say! Participate in our Online Polls and let your voice be heard. Cast your vote, see instant results, and be part of shaping decisions that matter. Your opinion counts!`
 
 
-    
+
+
     return (
         <div className={`${rubikFont.className} -mt-[80px] gap-y-6 flex flex-col`}>
 
-            <ImageListComponent title='Polls' content={content} images={images}/>
+            <ImageListComponent title='Polls' content={content} images={images} />
 
             <div className='w-[75%] mx-auto flex flex-col items-center gap-y-[150px]'>
-                
-                <WinnersComponent winnersData={winnersData}/>
 
-                <PollsCategoryComponent title="Clothes" pollsData={userVoteClothData} voteCategory={voteClothes} setVoteCategory={setVoteClothes}/>
+                <WinnersComponent winnersData={winnersData} />
 
-                <PollsCategoryComponent title="Shoes" pollsData={userVoteClothData} voteCategory={voteShoes} setVoteCategory={setVoteShoes}/>
+                <PollsCategoryComponent title="Clothes" pollsData={userVoteClothData} voteCategory={voteClothes} setVoteCategory={setVoteClothes} />
 
-                <PollsCategoryComponent title="Accessories" pollsData={userVoteAccessoryData} voteCategory={voteAccessories} setVoteCategory={setVoteAccessories}/>
+                <PollsCategoryComponent title="Shoes" pollsData={userVoteClothData} voteCategory={voteShoes} setVoteCategory={setVoteShoes} />
+
+                <PollsCategoryComponent title="Accessories" pollsData={userVoteAccessoryData} voteCategory={voteAccessories} setVoteCategory={setVoteAccessories} />
 
 
             </div>
+
+
+            {/* {
+                showProcessing
+                && <LoaderComponent />
+            }
+             */}
 
         </div>
     );

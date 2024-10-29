@@ -25,7 +25,7 @@ const HomeIndex = () => {
 
   const parentDivRef :React.MutableRefObject<HTMLDivElement | null>= useRef(null);
   const dispatch= useDispatch();
-  const [blackOutDone, setBlackOutDone]= useState<boolean>(false);
+  const [blackOutDone, setBlackOutDone]= useState<boolean>(true);
   
 
 
@@ -58,7 +58,7 @@ const HomeIndex = () => {
   }
   
   const mapSource: IEmbeddedSource= {
-    source: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.749130469827!2d3.4218632747320425!3d6.42626872428615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53227d3261b%3A0x66efbe21b1b35843!2sEko%20Hotel!5e0!3m2!1sen!2sng!4v1728141670808!5m2!1sen!2sng"
+    source: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7711056831804!2d3.4420400747320072!3d6.423448574318474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf51690ef1b0b%3A0xd452f1b714ec6b68!2sGT%20Centre!5e0!3m2!1sen!2sng!4v1730186339412!5m2!1sen!2sng"
   }
 
   return (

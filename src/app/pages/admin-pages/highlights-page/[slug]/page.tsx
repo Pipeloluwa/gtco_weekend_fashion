@@ -1,5 +1,5 @@
 "use client";
-import AnimatedLoadingComponent from '@/app/components/shared-components/animatedLoadingComponent';
+import AnimatedLoadingComponent from '@/app/components/shared-components/AnimatedLoadingComponent';
 import { rubikFont } from '@/app/fonts/fontsConfig';
 import { IHighlightsSingle } from '@/app/interfaces/admin-interfaces/HighlightsInterfaces';
 import { IPickPicture } from '@/app/interfaces/admin-interfaces/shared-interfaces/ISharedInterfces';
